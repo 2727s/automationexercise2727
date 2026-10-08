@@ -2,7 +2,7 @@
 
 import allure
 
-from helpers.users import get_login_password
+from helper import get_login_password
 from pages.login_page import LoginPage
 
 pytestmark = allure.feature("Login")

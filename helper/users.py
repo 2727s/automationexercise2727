@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 from helper.faker_data import faker_letters
 
-# Project root is the parent of this helpers folder.
+# Project root is the parent of this helper folder.
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 # .env value that means "generate random letters".

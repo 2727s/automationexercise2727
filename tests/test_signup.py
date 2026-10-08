@@ -3,8 +3,7 @@
 import allure
 from playwright.sync_api import expect
 
-from helper import get_name, get_postcode
-from helpers.users import get_login_password
+from helper import get_login_password, get_name, get_postcode
 from pages.login_page import LoginPage
 
 pytestmark = allure.feature("Signup")
