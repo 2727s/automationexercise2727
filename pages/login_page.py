@@ -33,6 +33,16 @@ class LoginPage(BasePage):
         ).to_be_visible()
         return self
 
+    def should_block_empty_login(self):
+        """Empty required fields stay on /login. The browser blocks the submit."""
+        email = self.page.locator("[data-qa='login-email']")
+        password = self.page.locator("[data-qa='login-password']")
+        expect(self.page).to_have_url("/login")
+        expect(email).to_have_value("")
+        expect(password).to_have_value("")
+        expect(email).to_have_js_property("validity.valueMissing", True)
+        return self
+
     def should_be_logged_in_as(self, name: str):
         expect(self.header.get_by_text(f"Logged in as {name}")).to_be_visible()
         return self
